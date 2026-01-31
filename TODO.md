@@ -4,23 +4,12 @@ Objective
 Build a minimal but production-minded Issue Tracker that supports users, projects, and issues,
 with real-time updates and role-based access.
 
-1.​ Write this app using Angular 20 & Java (JDK 17).
-2.​ Questions? State any assumptions you make and move forward.
-3.​ Return your deliverable within 6 hours.
 
-The exercise evaluates your ability to design and reason about a full-stack application of
-realistic scope. It is intentionally sized to require thoughtful use of AI, reflecting how modern
-engineering teams work. However, the use of AI is not a requirement.
-A core objective is to deliver a complete, working solution within the assignment timeframe. A
-project that is 100% functional across a narrower scope is preferred over a broad, unfinished
-architecture.
-Your submission should demonstrate both full-stack capability and your ability to balance
-timeliness with pragmatism, using AI as a force multiplier when appropriate, and grounded in
-strong engineering fundamentals.
 Scope (MVP):
 
 ●​ Auth:
 ○​ Sign up / login (email+password) or OAuth
+Sign up page created, but not functional.
 
 1○​ Protected routes
 ●​ Domain:
@@ -34,6 +23,7 @@ search on title).
 ●​ UI:
 ○​ Project list & detail.
 ○​ Issue list with filters, sort, and text search.
+ - Issue list sort-of exists at http://localhost:4200/
 ○​ Issue detail view with edit, comment thread, and activity log.
 ●​ Real-time: Push updates when an issue changes (WebSocket/SSE).
 ●​ Data model: Relational or document—justify the choice and indexing strategy.
@@ -43,8 +33,8 @@ search on title).
 ○​ Basic input validation and error handling.
 ●​ Ops hygiene:
 
-○​ Minimal README: stack, run instructions, trade-offs, and “If I had 2 more days”
+DONE ○​ Minimal README: stack, run instructions, trade-offs, and “If I had 2 more days”
 section.
 
-○​ Turnkey startup: Dockerfile + docker-compose (or equivalent) to run API, DB,
+DONE ○​ Turnkey startup: Dockerfile + docker-compose (or equivalent) to run API, DB,
 and web app; any required seed data
