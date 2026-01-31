@@ -2,7 +2,7 @@
 FROM node:20-alpine AS build
 WORKDIR /app
 COPY . .
-RUN npm install --legacy-peer-deps
+RUN npm install --legacy-peer-deps --force
 RUN npx ng build --configuration production
 
 # Stage 2: Serve
