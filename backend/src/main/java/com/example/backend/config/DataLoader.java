@@ -46,5 +46,8 @@ public class DataLoader implements CommandLineRunner {
 
             System.out.println("Seed data loaded: 1 User, 1 Project, 1 Issue");
         }
+        else {
+            System.out.println("Seed data already exists, skipping data loading.");
+        }
     }
 }
