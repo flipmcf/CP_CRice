@@ -12,19 +12,29 @@ If you want to reset the database completely (wipe the seed data and start fresh
 
 `sudo docker-compose down -v`
 
-###Issues?
+## Issues?  Need logs?
  sudo docker-compose up --build  (don't detach `-d`)
 
-## 📄 README.md for CP_CRice Issue Tracker
 
-Create this file in your root directory: `/home/flipmcf/Projects/CP_CRice/README.md`.
+## Quick Tour:
 
-```markdown
+### Backend:
+http://localhost:8080/api/users
+http://localhost:8080/api/issues
+http://localhost:8080/api/projects
+
+### Frontend:
+
+http://localhost:4200/signup  (not very functional)
+http://localhost:4200/   (the main dashboard)
+
+
+
 # CP_CRice Issue Tracker MVP
 
 A full-stack issue tracking application built with **Spring Boot 3 (Java 17)**, **PostgreSQL**, and **Angular 20**. This project features server-side pagination, filtering, and real-time updates.
 
-## 🛠 Prerequisites
+## 🛠 Prerequisites for dev build
 
 Ensure you have the following installed on your Ubuntu system:
 * **Java 17 JDK**
@@ -42,13 +52,6 @@ The application expects a PostgreSQL database named `cp_crice_db`.
 ```bash
 # Connect to Postgres
 sudo -u postgres psql -d cp_crice_db
-
-
-# Run these commands in the psql prompt:
-CREATE DATABASE cp_crice_db;
-CREATE USER admin WITH PASSWORD 'password' SUPERUSER;
-GRANT ALL PRIVILEGES ON DATABASE cp_crice_db TO admin;
-\q
 
 ```
 
@@ -111,24 +114,10 @@ npm start
 
 * **Angular 19 Signals**: Modern, reactive state management.
 * **Standalone Components**: Modular and lightweight architecture.
-* **SCSS**: Structured and maintainable styling.
+* **SCSS**: Structured and maintainable styling.  (not really)
 
 ### Developer
 
 * **Michael (flipmcf)**
 * **Sprint Duration**: 6-Hour MVP
 
-```
-
----
-
-### 💡 Strategic Check (2:10 PM)
-You now have 3 hours and 50 minutes left. The "Infrastructure" and "Documentation" are done. 
-
-**Next high-value target:** The **Real-time Push (SSE)**. 
-The requirements usually ask for "real-time" or "push notifications." It sounds hard, but in Spring Boot, it's just an `SseEmitter`. 
-
-**Would you like me to provide the `SseController` code?** It will allow your Angular frontend to "listen" for changes and refresh the list automatically whenever an issue is updated—without the user clicking refresh. 
-
-
-```
