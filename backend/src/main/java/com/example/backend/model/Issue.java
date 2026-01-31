@@ -4,30 +4,27 @@ import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
 
-@Entity
-@Data
+@Entity @Data
 public class Issue {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
     private String title;
     private String description;
-
+    
     @Enumerated(EnumType.STRING)
-    private Status status = Status.OPEN;
-
+    private Status status;
+    
     @Enumerated(EnumType.STRING)
-    private Priority priority = Priority.MEDIUM;
-
-    @ManyToOne
-    private Project project;
-
+    private Priority priority;
+    
     @ManyToOne
     private User assignee;
-
+    
+    @ManyToOne
+    private Project project;
+    
     private LocalDateTime createdAt = LocalDateTime.now();
-    private LocalDateTime updatedAt = LocalDateTime.now();
 
     public enum Status { OPEN, IN_PROGRESS, CLOSED }
     public enum Priority { LOW, MEDIUM, HIGH }
