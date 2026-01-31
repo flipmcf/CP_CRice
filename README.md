@@ -4,6 +4,8 @@ clone the repository to a linux system, and simply type "./run.sh" which will bu
 
 TODO: The run script does do a bunch of 'sudo' to make sure permissions work, so yeah, just do that.
 
+This database is 'seeded' with test data.  pretty much that's it
+
 to shut it down `sudo docker-compose stop`
 
 The "Nuclear" Option (Wipe everything)
