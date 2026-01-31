@@ -26,9 +26,11 @@ public class DataLoader implements CommandLineRunner {
     public void run(String... args) throws Exception {
         if (userRepository.count() == 0) {
             User user = new User();
-            user.setName("Test User");
+            user.setUsername("Test User");
             user.setEmail("test@example.com");
-            userRepository.save(user);
+            user.setPassword("password"); // In a real app, passwords should be hashed!  
+            User savedUser =userRepository.save(user);
+
 
             Project project = new Project();
             project.setName("Demo Project");
@@ -40,7 +42,7 @@ public class DataLoader implements CommandLineRunner {
             issue.setDescription("This is a test issue created by the seed data loader.");
             issue.setStatus(Issue.Status.OPEN);
             issue.setPriority(Issue.Priority.HIGH);
-            issue.setAssignee(user);
+            issue.setAssignee(savedUser);
             issue.setProject(project);
             issueRepository.save(issue);
 

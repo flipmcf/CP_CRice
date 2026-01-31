@@ -2,6 +2,8 @@
 ## FOR THE IMPATIENT:
 clone the repository to a linux system, and simply type "./run.sh" which will build the docker containers and launch the application.
 
+TODO: The run script does do a bunch of 'sudo' to make sure permissions work, so yeah, just do that.
+
 to shut it down `sudo docker-compose stop`
 
 The "Nuclear" Option (Wipe everything)
@@ -10,6 +12,8 @@ If you want to reset the database completely (wipe the seed data and start fresh
 
 `sudo docker-compose down -v`
 
+###Issues?
+ sudo docker-compose up --build  (don't detach `-d`)
 
 ## 📄 README.md for CP_CRice Issue Tracker
 
@@ -37,7 +41,8 @@ Ensure you have the following installed on your Ubuntu system:
 The application expects a PostgreSQL database named `cp_crice_db`.
 ```bash
 # Connect to Postgres
-sudo -u postgres psql
+sudo -u postgres psql -d cp_crice_db
+
 
 # Run these commands in the psql prompt:
 CREATE DATABASE cp_crice_db;
