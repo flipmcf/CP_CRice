@@ -36,6 +36,13 @@ import { HttpClient } from '@angular/common/http';
             <div class="card-header">
               <span class="badge" [class]="issue.status.toLowerCase()">{{ issue.status }}</span>
               <span class="priority-label">{{ issue.priority }}</span>
+               <div class="card-actions">
+                @if (issue.status !== 'CLOSED') {
+                  <button (click)="updateStatus(issue)" class="status-btn">
+                    Move to {{ issue.status === 'OPEN' ? 'In Progress' : 'Done' }}
+                  </button>
+                }
+              </div>
             </div>
             <h3>{{ issue.title }}</h3>
             <p>{{ issue.description }}</p>
@@ -79,4 +86,10 @@ export class IssueDashboardComponent implements OnInit {
        this.newIssue = { title: '', priority: 'LOW', status: 'OPEN' }; // Reset`
     });
   }
+   updateStatus(issue: any) {
+     const nextStatus = issue.status === 'OPEN' ? 'IN_PROGRESS' : 'CLOSED';
+  
+     this.http.patch(`http://localhost:8080/api/issues/${issue.id}`, { status: nextStatus })
+       .subscribe(() => this.issueService.fetchIssues());
+   }
 }

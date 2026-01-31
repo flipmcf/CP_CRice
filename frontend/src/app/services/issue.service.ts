@@ -22,4 +22,8 @@ export class IssueService {
       error: () => this.loading.set(false)
     });
   }
+
+  updateIssueStatus(id: number, newStatus: string) {
+    return this.http.patch(`${this.apiUrl}/${id}`, { status: newStatus });
+  }
 }
