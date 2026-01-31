@@ -1,8 +1,15 @@
-It is **2:05 PM**. A strong `README.md` is the difference between an evaluator thinking your project is "okay" and them thinking it’s "turn-key production grade."
 
-Since you are running this on Ubuntu with JDK 17, Postgres, and Angular, the instructions need to be explicit about the environment setup to ensure the "git clone" experience is seamless.
+## FOR THE IMPATIENT:
+clone the repository to a linux system, and simply type "./run.sh" which will build the docker containers and launch the application.
 
----
+to shut it down `sudo docker-compose stop`
+
+The "Nuclear" Option (Wipe everything)
+
+If you want to reset the database completely (wipe the seed data and start fresh), add the -v flag to remove the volumes.
+
+`sudo docker-compose down -v`
+
 
 ## 📄 README.md for CP_CRice Issue Tracker
 
@@ -11,7 +18,7 @@ Create this file in your root directory: `/home/flipmcf/Projects/CP_CRice/README
 ```markdown
 # CP_CRice Issue Tracker MVP
 
-A full-stack issue tracking application built with **Spring Boot 3 (Java 17)**, **PostgreSQL**, and **Angular 19**. This project features server-side pagination, filtering, and real-time updates.
+A full-stack issue tracking application built with **Spring Boot 3 (Java 17)**, **PostgreSQL**, and **Angular 20**. This project features server-side pagination, filtering, and real-time updates.
 
 ## 🛠 Prerequisites
 
